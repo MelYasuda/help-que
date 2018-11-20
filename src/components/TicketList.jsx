@@ -1,17 +1,24 @@
-import React from 'react';
-import Ticket from './TIcket'
+import React from "react";
+import Ticket from "./Ticket";
+import PropTypes from "prop-types";
 
-function TicketList() {
-
-
-    return (
-
+function TicketList(props) {
+  return (
+    <div>
+      {props.ticketList.map((ticket, index) => (
         <Ticket
-          location="3A"
-          names="Mel and Victoria"
-          issue="Help, John!"
+          location={ticket.location}
+          names={ticket.names}
+          issue={ticket.issue}
+          key={index}
         />
-    );
+      ))}
+    </div>
+  );
 }
+
+TicketList.propTypes = {
+  ticketList: PropTypes.array
+};
 
 export default TicketList;
