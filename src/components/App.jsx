@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import TicketList from "./TicketList";
 import NewTicketControl from "./NewTicketControl";
-// import Error404 from "./Error404";
+import Error404 from "./Error404";
 import { Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -42,7 +42,7 @@ class App extends React.Component {
               />
             )}
           />
-          {/* <Route component={Error404} /> */}
+          <Route component={Error404} />
         </Switch>
       </div>
     );
