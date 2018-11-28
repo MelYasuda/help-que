@@ -10,7 +10,7 @@ function TicketList(props) {
           location={ticket.location}
           names={ticket.names}
           issue={ticket.issue}
-          timeOpen={ticket.timeOpen}
+          formattedWaitTime={ticket.formattedWaitTime}
           key={ticket.id}
         />
       ))}
@@ -19,7 +19,7 @@ function TicketList(props) {
 }
 
 TicketList.propTypes = {
-  ticketList: PropTypes.array
+  ticketList: PropTypes.array,
 };
 
 export default TicketList;
