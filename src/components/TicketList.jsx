@@ -10,6 +10,7 @@ function TicketList(props) {
           location={ticket.location}
           names={ticket.names}
           issue={ticket.issue}
+          timeOpen={ticket.timeOpen}
           key={ticket.id}
         />
       ))}
