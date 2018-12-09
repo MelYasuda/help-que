@@ -5,6 +5,8 @@ import NewTicketControl from "./NewTicketControl";
 import Error404 from "./Error404";
 import { Switch, Route } from "react-router-dom";
 import Moment from 'moment';
+import Admin from './Admin';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -23,7 +25,12 @@ class App extends React.Component {
     5000
     );
   }
-  
+
+  componentWillUnmount(){
+    console.log('componentWillUnmount');
+    clearInterval(this.waitTimeUpdateTimer);
+  }
+
   updateTicketElapsedWaitTime() {
     console.log("check");
     let newMasterTicketList = this.state.masterTicketList.slice();
@@ -64,6 +71,7 @@ class App extends React.Component {
               />
             )}
           />
+          <Route path='/admin' component={Admin} />
           <Route component={Error404} />
         </Switch>
       </div>
